@@ -10,11 +10,11 @@ class Rental {
     }
 
     double getPrice() {
-        return movie.getPriceCode().getPrice(daysRented);
+        return movie.getPrice(daysRented);
     }
 
     int getFrequentRenterPoints() {
-        return movie.getPriceCode().getFrequentRenterPoints(daysRented);
+        return movie.getFrequentRenterPoints(daysRented);
     }
 
     String print() {
