@@ -32,12 +32,7 @@ class Customer {
             rentalPrice = rental.getPrice();
 
             // add frequent renter points
-            frequentRenterPoints++;
-
-            // add bonus for a two day new release rental
-            if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1) {
-                frequentRenterPoints++;
-            }
+            frequentRenterPoints += rental.getFrequentRenterPoints();
 
             //show figures for this rental
             result += String.format("\t%s\t\t%d\t%s\n",
