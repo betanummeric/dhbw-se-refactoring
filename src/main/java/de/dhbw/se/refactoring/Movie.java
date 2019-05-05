@@ -1,6 +1,6 @@
 package de.dhbw.se.refactoring;
 
-public class Movie {
+class Movie {
     static final PriceCode CHILDRENS = new ChildrensPriceCode();
     static final PriceCode REGULAR = new RegularPriceCode();
     static final PriceCode NEW_RELEASE = new NewReleasePriceCode();

@@ -1,6 +1,6 @@
 package de.dhbw.se.refactoring;
 
-public class RegularPriceCode extends PriceCode {
+class RegularPriceCode extends PriceCode {
 
     @Override
     public double getPrice(int daysRented) {
