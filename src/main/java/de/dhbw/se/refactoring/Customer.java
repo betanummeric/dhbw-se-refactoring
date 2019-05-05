@@ -7,19 +7,19 @@ class Customer {
     private String name;
     private List<Rental> rentals = new ArrayList<>();
 
-    public Customer(String name) {
+    Customer(String name) {
         this.name = name;
     }
 
-    public void addRental(Rental rental) {
+    void addRental(Rental rental) {
         rentals.add(rental);
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public String statement() {
+    String statement() {
         double totalPrice = 0;
         int frequentRenterPoints = 0;
         String result = "Rental Record for " + this.getName() + "\n";
