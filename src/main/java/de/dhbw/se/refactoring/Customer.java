@@ -20,18 +20,18 @@ class Customer {
     }
 
     String statement() {
-        String result = "Rental Record for " + this.getName() + "\n";
-        result += "\tTitle\t\tDays\tAmount\n";
+        StringBuilder result = new StringBuilder("Rental Record for " + this.getName() + "\n");
+        result.append("\tTitle\t\tDays\tAmount\n");
 
         for (Rental rental : rentals) {
             //show figures for this rental
-            result += rental.print();
+            result.append(rental.print());
         }
 
         //add footer lines
-        result += String.format("Amount owed is %s\n", getTotalPrice());
-        result += String.format("You earned %d frequent renter points", getFrequentRenterPoints());
-        return result;
+        result.append(String.format("Amount owed is %s\n", getTotalPrice()));
+        result.append(String.format("You earned %d frequent renter points", getFrequentRenterPoints()));
+        return result.toString();
     }
 
     private int getFrequentRenterPoints() {
