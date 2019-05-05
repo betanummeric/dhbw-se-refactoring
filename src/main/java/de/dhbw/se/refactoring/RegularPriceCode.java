@@ -11,4 +11,9 @@ public class RegularPriceCode implements PriceCode {
         return rentalPrice;
     }
 
+    @Override
+    public int getFrequentRenterPoints(int daysRented) {
+        return 1;
+    }
+
 }
