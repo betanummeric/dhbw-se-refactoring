@@ -29,7 +29,7 @@ class Customer {
             double rentalPrice = 0;
 
             //determine amounts for each line
-            rentalPrice = rentalPriceFor(rental);
+            rentalPrice = rental.getPrice();
 
             // add frequent renter points
             frequentRenterPoints++;
@@ -51,24 +51,6 @@ class Customer {
         result += String.format("Amount owed is %s\n", totalPrice);
         result += String.format("You earned %d frequent renter points", frequentRenterPoints);
         return result;
-    }
-
-    private double rentalPriceFor(Rental rental) {
-        double rentalPrice = 0;
-        switch (rental.getMovie().getPriceCode()) {
-            case Movie.REGULAR:
-                rentalPrice += 2;
-                if (rental.getDaysRented() > 2) rentalPrice += (rental.getDaysRented() - 2) * 1.5;
-                break;
-            case Movie.NEW_RELEASE:
-                rentalPrice += rental.getDaysRented() * 3;
-                break;
-            case Movie.CHILDRENS:
-                rentalPrice += 1.5;
-                if (rental.getDaysRented() > 3) rentalPrice += (rental.getDaysRented() - 3) * 1.5;
-                break;
-        }
-        return rentalPrice;
     }
 
 }
