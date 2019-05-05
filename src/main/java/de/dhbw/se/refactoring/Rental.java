@@ -43,4 +43,8 @@ class Rental {
 
         return 1;
     }
+
+    String print() {
+        return String.format("\t%s\t\t%d\t%s\n", movie.getTitle(), daysRented, getPrice());
+    }
 }

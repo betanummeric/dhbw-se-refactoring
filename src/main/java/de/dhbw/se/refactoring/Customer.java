@@ -25,10 +25,7 @@ class Customer {
 
         for (Rental rental : rentals) {
             //show figures for this rental
-            result += String.format("\t%s\t\t%d\t%s\n",
-                                    rental.getMovie().getTitle(),
-                                    rental.getDaysRented(),
-                                    rental.getPrice());
+            result += rental.print();
         }
 
         //add footer lines
