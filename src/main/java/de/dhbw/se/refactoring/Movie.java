@@ -1,19 +1,19 @@
 package de.dhbw.se.refactoring;
 
 public class Movie {
-    static final int CHILDRENS = 2;
-    static final int REGULAR = 0;
-    static final int NEW_RELEASE = 1;
+    static final PriceCode CHILDRENS = new ChildrensPriceCode();
+    static final PriceCode REGULAR = new RegularPriceCode();
+    static final PriceCode NEW_RELEASE = new NewReleasePriceCode();
 
     private String title;
-    private int priceCode;
+    private PriceCode priceCode;
 
-    Movie(String title, int priceCode) {
+    Movie(String title, PriceCode priceCode) {
         this.title = title;
         this.priceCode = priceCode;
     }
 
-    int getPriceCode() {
+    PriceCode getPriceCode() {
         return priceCode;
     }
 
