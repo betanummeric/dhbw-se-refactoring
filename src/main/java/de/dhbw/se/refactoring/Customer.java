@@ -23,10 +23,8 @@ class Customer {
         StringBuilder result = new StringBuilder("Rental Record for " + this.getName() + "\n");
         result.append("\tTitle\t\tDays\tAmount\n");
 
-        for (Rental rental : rentals) {
-            //show figures for this rental
-            result.append(rental.print());
-        }
+        //show figures for every rental
+        rentals.stream().map(Rental::print).forEach(result::append);
 
         //add footer lines
         result.append(String.format("Amount owed is %s\n", getTotalPrice()));
