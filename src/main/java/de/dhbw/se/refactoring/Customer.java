@@ -20,7 +20,6 @@ class Customer {
     }
 
     String statement() {
-        double totalPrice = 0;
         String result = "Rental Record for " + this.getName() + "\n";
         result += "\tTitle\t\tDays\tAmount\n";
 
@@ -30,11 +29,10 @@ class Customer {
                                     rental.getMovie().getTitle(),
                                     rental.getDaysRented(),
                                     rental.getPrice());
-            totalPrice += rental.getPrice();
         }
 
         //add footer lines
-        result += String.format("Amount owed is %s\n", totalPrice);
+        result += String.format("Amount owed is %s\n", getTotalPrice());
         result += String.format("You earned %d frequent renter points", getFrequentRenterPoints());
         return result;
     }
@@ -43,4 +41,12 @@ class Customer {
         return rentals.stream().mapToInt(Rental::getFrequentRenterPoints).sum();
     }
 
+    private double getTotalPrice(){
+        double totalPrice = 0;
+        for (Rental rental : rentals) {
+            totalPrice += rental.getPrice();
+
+        }
+        return totalPrice;
+    }
 }
