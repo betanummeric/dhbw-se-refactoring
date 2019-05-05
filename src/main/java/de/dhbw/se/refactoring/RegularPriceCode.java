@@ -1,6 +1,6 @@
 package de.dhbw.se.refactoring;
 
-public class RegularPriceCode implements PriceCode {
+public class RegularPriceCode extends PriceCode {
 
     @Override
     public double getPrice(int daysRented) {
@@ -9,11 +9,6 @@ public class RegularPriceCode implements PriceCode {
             rentalPrice += (daysRented - 2) * 1.5;
         }
         return rentalPrice;
-    }
-
-    @Override
-    public int getFrequentRenterPoints(int daysRented) {
-        return 1;
     }
 
 }

@@ -1,6 +1,9 @@
 package de.dhbw.se.refactoring;
 
-public interface PriceCode {
-    double getPrice(int daysRented);
-    int getFrequentRenterPoints(int daysRented);
+abstract class PriceCode {
+    abstract double getPrice(int daysRented);
+
+    int getFrequentRenterPoints(int daysRented){
+        return 1;
+    }
 }
