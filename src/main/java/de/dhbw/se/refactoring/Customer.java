@@ -25,17 +25,12 @@ class Customer {
         result += "\tTitle\t\tDays\tAmount\n";
 
         for (Rental rental : rentals) {
-            double rentalPrice = 0;
-
-            //determine amounts for each line
-            rentalPrice = rental.getPrice();
-
             //show figures for this rental
             result += String.format("\t%s\t\t%d\t%s\n",
                                     rental.getMovie().getTitle(),
                                     rental.getDaysRented(),
-                                    rentalPrice);
-            totalPrice += rentalPrice;
+                                    rental.getPrice());
+            totalPrice += rental.getPrice();
         }
 
         //add footer lines
