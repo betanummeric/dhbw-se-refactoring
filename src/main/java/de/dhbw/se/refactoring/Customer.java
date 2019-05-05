@@ -42,11 +42,6 @@ class Customer {
     }
 
     private double getTotalPrice(){
-        double totalPrice = 0;
-        for (Rental rental : rentals) {
-            totalPrice += rental.getPrice();
-
-        }
-        return totalPrice;
+        return rentals.stream().mapToDouble(Rental::getPrice).sum();
     }
 }
