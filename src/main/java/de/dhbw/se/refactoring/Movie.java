@@ -5,8 +5,8 @@ public class Movie {
     static final PriceCode REGULAR = new RegularPriceCode();
     static final PriceCode NEW_RELEASE = new NewReleasePriceCode();
 
-    private String title;
-    private PriceCode priceCode;
+    private final String title;
+    private final PriceCode priceCode;
 
     Movie(String title, PriceCode priceCode) {
         this.title = title;
