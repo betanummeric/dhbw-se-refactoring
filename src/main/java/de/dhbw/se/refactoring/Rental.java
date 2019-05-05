@@ -9,14 +9,6 @@ class Rental {
         this.daysRented = daysRented;
     }
 
-    int getDaysRented() {
-        return daysRented;
-    }
-
-    Movie getMovie() {
-        return movie;
-    }
-
     double getPrice() {
         double rentalPrice = 0;
         switch (movie.getPriceCode()) {
