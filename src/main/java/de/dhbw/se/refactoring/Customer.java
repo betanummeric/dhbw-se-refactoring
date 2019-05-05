@@ -21,7 +21,6 @@ class Customer {
 
     String statement() {
         double totalPrice = 0;
-        int frequentRenterPoints = 0;
         String result = "Rental Record for " + this.getName() + "\n";
         result += "\tTitle\t\tDays\tAmount\n";
 
@@ -30,9 +29,6 @@ class Customer {
 
             //determine amounts for each line
             rentalPrice = rental.getPrice();
-
-            // add frequent renter points
-            frequentRenterPoints += rental.getFrequentRenterPoints();
 
             //show figures for this rental
             result += String.format("\t%s\t\t%d\t%s\n",
@@ -44,8 +40,16 @@ class Customer {
 
         //add footer lines
         result += String.format("Amount owed is %s\n", totalPrice);
-        result += String.format("You earned %d frequent renter points", frequentRenterPoints);
+        result += String.format("You earned %d frequent renter points", getFrequentRenterPoints());
         return result;
+    }
+
+    private int getFrequentRenterPoints() {
+        int frequentRenterPoints = 0;
+        for (Rental rental : rentals) {
+            frequentRenterPoints += rental.getFrequentRenterPoints();
+        }
+        return frequentRenterPoints;
     }
 
 }
